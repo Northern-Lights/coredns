@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+message RdnsRequest {
+    string ip_addr = 1;
+}
+
+message RdnsResponse {
+    repeated string domains = 1;
+}
+
+service RdnsCache {
+    rpc Rdns (RdnsRequest) returns (RdnsResponse);
+}
